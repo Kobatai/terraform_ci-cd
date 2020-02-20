@@ -19,7 +19,7 @@
         "logs:CreateLogStream",
         "logs:PutLogEvents"
       ],
-    "Resource": "*"
+      "Resource": "*"
     }
   ]
 }
