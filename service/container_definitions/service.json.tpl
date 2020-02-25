@@ -1,7 +1,7 @@
 [
   {
     "name": "bd-webapp",
-    "image": "ECR のURL/bd-image:latest",
+    "image": "393466549228.dkr.ecr.ap-northeast-1.amazonaws.com/bd-image:latest",
     "cpu": 333,
     "memoryReservation": 600,
     "essential": true,
@@ -9,10 +9,9 @@
       {
         "hostPort": 0,
         "protocol": "tcp",
-        "containerPort": 4567
+        "containerPort": 8000
       }
     ],
-    "command": ["bundle", "exec", "ruby", "app.rb", "-o", "0.0.0.0"],
     "logConfiguration": {
       "logDriver": "awslogs",
       "options": {
