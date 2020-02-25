@@ -5,8 +5,8 @@ resource "aws_ecs_service" "webapp-service" {
   desired_count   = 1
   launch_type     = "EC2"
   load_balancer {
-    target_group_arn = aws_lb_target_group.http.arn
-    container_name = "bd-webapp"
-    container_port = "8000"
+    target_group_arn = "${aws_lb_target_group.http.arn}"
+    container_name   = "bd-webapp"
+    container_port   = "8000"
   }
 }

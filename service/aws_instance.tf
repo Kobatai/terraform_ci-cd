@@ -5,7 +5,7 @@ resource "aws_instance" "bd_instance" {
   monitoring                  = true
   iam_instance_profile        = "${data.terraform_remote_state.aws_iam.ecs_instance_profile_name}"
   subnet_id                   = "${data.terraform_remote_state.vpc.public_subnet_1_id}"
-  user_data                   = file("./user_data.sh")
+  user_data                   = "${file("./user_data.tpl")}"
   associate_public_ip_address = true
 
   vpc_security_group_ids = [
