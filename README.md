@@ -10,4 +10,4 @@ docker run \
    -w /terraform \
    -it \
    --entrypoint=ash \
-   hashicorp/terraform:0.11.13```
+   hashicorp/terraform:0.11.13
