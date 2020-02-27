@@ -1,7 +1,7 @@
 [
   {
     "name": "bd-webapp",
-    "image": "393466549228.dkr.ecr.ap-northeast-1.amazonaws.com/bd-image:latest",
+    "image": "393466549228.dkr.ecr.ap-northeast-1.amazonaws.com/bd-image:php",
     "cpu": 333,
     "memoryReservation": 600,
     "essential": true,

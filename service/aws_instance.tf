@@ -1,10 +1,12 @@
 
 resource "aws_instance" "bd_instance" {
-  ami                         = "ami-05b296a384694dfa4"
-  instance_type               = "t2.small"
-  monitoring                  = true
-  iam_instance_profile        = "${data.terraform_remote_state.aws_iam.ecs_instance_profile_name}"
-  subnet_id                   = "${data.terraform_remote_state.vpc.public_subnet_1_id}"
+  ami           = "ami-05b296a384694dfa4"
+  instance_type = "t2.small"
+  monitoring    = true
+  # iam_instance_profile        = "${data.terraform_remote_state.aws_iam.outputs.ecs_instance_profile_name}"
+  iam_instance_profile = "ecs-instance-profile"
+  # subnet_id                   = "${data.terraform_remote_state.vpc.outputs.public_subnet_1_id}"
+  subnet_id                   = "subnet-0cb6da27bad9d0792"
   user_data                   = "${file("./user_data.tpl")}"
   associate_public_ip_address = true
 
