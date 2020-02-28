@@ -10,3 +10,10 @@ resource "aws_iam_policy" "ecs_instance_policy" {
   description = ""
   policy      = "${file("aws_iam_policies/ecr_policy.json")}"
 }
+
+resource "aws_iam_policy" "ecs_task_policy" {
+  name        = "ecs-task-policy"
+  path        = "/"
+  description = ""
+  policy      = "${file("aws_iam_policies/ecs_task_policy.json")}"
+}
