@@ -18,7 +18,7 @@
         "awslogs-region": "ap-northeast-1",
         "awslogs-stream-prefix": "service"
       }
-    }
+    },
     "environment": [],
     "secrets": [
       {
