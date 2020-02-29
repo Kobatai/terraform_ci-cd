@@ -3,6 +3,17 @@ resource "aws_security_group" "instance" {
   description = "instance sg"
   # vpc_id      = "${data.terraform_remote_state.vpc.outputs.vpc_id}"
   vpc_id = "vpc-00fbb1a3ff5584554"
+
+  ingress {
+    from_port = 0
+    to_port   = 0
+    protocol  = "-1"
+
+    security_groups = [
+      "${aws_security_group.alb.id}",
+    ]
+  }
+
   egress {
     from_port   = 0
     to_port     = 0
